@@ -53,17 +53,14 @@ public class ImageRecognition {
                     // increase length existing segment
                     length++;
                     // If we are about to exit the loop...
-                    if (j == line.length() - 1) {
-                        horizontalSegments.add(new HorizontalSegment(new Point(
-                                left, i), length));
-                    }
+                    if (j == line.length() - 1)
+                        horizontalSegments.add(new HorizontalSegment(new Point(left, i), length));
                 }
             } else if (left != -1) {
                 // verify new segment creation
-                if (length >= MIN_RECTANGLE_WIDTH) {
-                    horizontalSegments.add(new HorizontalSegment(new Point(
-                            left, i), length));
-                }
+                if (length >= MIN_RECTANGLE_WIDTH) 
+                    horizontalSegments.add(new HorizontalSegment(new Point(left, i), length));
+                
                 left = -1;
             }
         }
@@ -85,21 +82,20 @@ public class ImageRecognition {
             if (newRectangle == null) {
                 newRectangle = hs;
                 height = 1;
-            } else if (hs.length == newRectangle.length
-                    && hs.leftPoint.x == newRectangle.leftPoint.x
-                    && hs.leftPoint.y == horizontalSegments[i - 1].leftPoint.y + 1) {
+            } else if (hs.length == newRectangle.length && 
+                       hs.leftPoint.x == newRectangle.leftPoint.x && 
+                       hs.leftPoint.y == horizontalSegments[i - 1].leftPoint.y + 1)
                 height++;
-            } else {
+            else {
                 rectangles.add(new Rectangle(newRectangle.leftPoint.x,
                         newRectangle.leftPoint.y, newRectangle.length, height));
                 newRectangle = hs;
                 height = 1;
             }
             // If we are about to exit the loop...
-            if (i == horizontalSegments.length - 1) {
+            if (i == horizontalSegments.length - 1) 
                 rectangles.add(new Rectangle(newRectangle.leftPoint.x,
                         newRectangle.leftPoint.y, newRectangle.length, height));
-            }
         }
 
         Collections.sort(rectangles, new RectangleComparator());
