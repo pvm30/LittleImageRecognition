@@ -114,3 +114,7 @@ Assessment outputs
 
 1. Source code of Java program that demonstrates algorithmical skills and a knowledge of programming 
 language. 
+
+ImageRecognitionTest.java verifies files containing this sequences of '0' and '1' plus a new file containing the character 'U' not defined in the specification but added by me
+
+Best regards
