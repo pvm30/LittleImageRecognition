@@ -153,7 +153,7 @@ public class ImageRecognition {
             if (r1.y > r2.y)
                 return 1;
 
-            return r1.x - r2.y;
+            return r1.x - r2.x;
         }
     }
 }
