@@ -66,7 +66,7 @@ public abstract class CharacterDefinition {
         Rectangle[] rsAbove = {};
         for (int i = 1; i < r.length; i++) {
             if (r[i].y > r[i - 1].y) 
-                // The new rectangle in in a different 'y' coordinate
+                // The new rectangle is in a different 'y' coordinate
                 // we have to recompute what is above it...
                 rsAbove = computeRsAbove(r, i);
             
